@@ -1,0 +1,187 @@
+.btn {
+    padding-top: $padding-6 -2;
+    padding-bottom: $padding-6 -2;
+    font-size: $font-size-4;
+    border-radius: 40px;
+    font-weight: $font-weight-bold;
+
+    &.btn-blue-first {
+        @include buttonStyle($color-white-200, $color-blue-200, $color-blue-200);
+
+        &:hover {
+            @include buttonStyle($color-blue-200, $color-white-100, $color-blue-200);
+        }
+
+        &.paddingX-30 {
+            padding-left: $padding-30;
+            padding-right: $padding-30;
+        }
+
+        &.paddingX-15 {
+            padding-left: $padding-15;
+            padding-right: $padding-15;
+        }
+
+        &.paddingX-20 {
+            padding-left: $padding-20;
+            padding-right: $padding-20;
+        }
+    }
+
+    &.btn-blue-second {
+        @include buttonStyle($color-blue-200, $color-white-100, $color-blue-200);
+
+        &:hover {
+            @include buttonStyle($color-white-200, $color-blue-200, $color-blue-200);
+        }
+
+        &.paddingX-30 {
+            padding-left: $padding-30;
+            padding-right: $padding-30;
+        }
+
+        &.paddingX-15 {
+            padding-left: $padding-15;
+            padding-right: $padding-15;
+        }
+
+        &.paddingX-15 {
+            padding-left: $padding-20;
+            padding-right: $padding-20;
+        }
+    }
+
+    &.btn-red-first{
+        @include buttonStyle($color-white-100,$color-red,$color-white-100);
+        border-width: 2px;
+
+        &:hover{
+            @include buttonStyle($color-red,$color-white-100,$color-white-100);
+
+        }
+
+        &.paddingX-30 {
+            padding-left: $padding-30;
+            padding-right: $padding-30;
+        }
+
+        &.paddingX-15 {
+            padding-left: $padding-15;
+            padding-right: $padding-15;
+        }
+
+        &.paddingX-20 {
+            padding-left: $padding-20;
+            padding-right: $padding-20;
+        }
+
+        &.paddingX-25 {
+            padding-left: $padding-25;
+            padding-right: $padding-25;
+        }
+    }
+    &.btn-red-second{
+        @include buttonStyle($color-red,$color-white-100,$color-red);
+        border-width: 2px;
+
+        &:hover{
+            @include buttonStyle($color-white-100,$color-red,$color-red);
+
+        }
+
+        &.paddingX-30 {
+            padding-left: $padding-30;
+            padding-right: $padding-30;
+        }
+
+        &.paddingX-15 {
+            padding-left: $padding-15;
+            padding-right: $padding-15;
+        }
+
+        &.paddingX-20 {
+            padding-left: $padding-20;
+            padding-right: $padding-20;
+        }
+
+        &.paddingX-25 {
+            padding-left: $padding-25;
+            padding-right: $padding-25;
+        }
+    }
+
+    &.btn-red-first-special{
+        @include buttonStyle($color-white-100,$color-red,$color-red);
+        border-width: 2px;
+
+        &:hover{
+            @include buttonStyle($color-red,$color-white-100,$color-red);
+
+        }
+
+        &.paddingX-30 {
+            padding-left: $padding-30;
+            padding-right: $padding-30;
+        }
+
+        &.paddingX-15 {
+            padding-left: $padding-15;
+            padding-right: $padding-15;
+        }
+
+        &.paddingX-20 {
+            padding-left: $padding-20;
+            padding-right: $padding-20;
+        }
+
+        &.paddingX-25 {
+            padding-left: $padding-25;
+            padding-right: $padding-25;
+        }
+    }
+}
+
+.owl-nav{
+    button {
+        @include buttonStyle($color-dark-blue,$color-white-lowOpacity,none);
+        padding: $padding-30 $padding-20;
+        
+    }
+}
+
+.fall-down-color-btn-animation {
+    z-index: 1;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        background-color: $color-white-100;
+
+        transition: transform .2s ease-in-out;
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+
+    &:hover::before{
+        transform: scaleY(1);
+    }
+
+    &:hover{
+        color: $color-dark-blue !important;
+    }
+    &.onclick{
+        background-color: $color-white-100;
+        color: $color-dark-blue !important;
+
+        i{
+            transform: rotate(180deg);
+        }
+    }
+
+}

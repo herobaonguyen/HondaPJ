@@ -1,0 +1,329 @@
+.view-car-modal {
+    position: fixed;
+    background-color: $color-blue-300;
+    top: 49px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    // z-index: 10;
+    height: 0%;
+    transition: all 0.3s linear;
+
+    &.open-modal {
+        height: 100%;
+    }
+
+    .modal-dialog {
+        margin: 0 auto;
+        height: 100%;
+        min-width: 100%;
+
+        .modal-content {
+            height: 100%;
+            font-size: 3rem;
+            width: 100%;
+            border: 0;
+            border-radius: 0;
+        }
+    }
+}
+
+.view-car-modal__nav-pills {
+    .vehicle-nav-pills {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+
+        li {
+            padding: $padding-22 0;
+            .nav-link {
+                padding: 0 $padding-25 !important;
+                font-weight: $font-weight-bold;
+                color: $color-dark-blue !important;
+                border-right: 2px solid #eaeaea;
+
+                &.active {
+                    color: $color-blue-100 !important;
+                    text-decoration: underline !important;
+                }
+
+                &:hover {
+                    color: $color-blue-200 !important;
+                }
+            }
+        }
+    }
+
+    &.animate__animated.animate__slideInDown {
+        --animate-duration: 0.1s;
+    }
+}
+
+.view-car-modal__container {
+    padding: 0 $padding-50;
+    background-color: $color-white-200;
+
+    .car-container {
+        .car-container__header {
+            position: relative;
+
+            .car-container__name {
+                display: flex;
+                align-items: center;
+                padding: $padding-15 + 1 0 $padding-10 0 !important;
+                padding: 0 $padding-6;
+                font-size: $font-size-5;
+                color: $color-dark-blue;
+                font-weight: $font-weight-bold;
+                margin: 0 10px;
+            }
+        }
+
+        .car-card {
+            padding: 0px $padding-15;
+
+            .car-img {
+                background-color: $color-white-100;
+                img {
+                    width: 100%;
+                }
+            }
+            .car-container {
+                background-color: $color-white-100;
+
+                .car-name {
+                    width: 86%;
+                    font-weight: $font-weight-bold;
+                    font-size: $font-size-5;
+                    margin: 0 auto $margin-5 auto;
+                    border-bottom: 1.3px solid #e8e8e8;
+                    padding-bottom: $padding-6;
+                }
+                .car-info {
+                    width: 86%;
+                    display: flex;
+                    flex-direction: column;
+                    color: $color-dark-blue;
+                    margin: $margin-5 auto;
+
+                    .car-info__box {
+                        display: flex;
+                        margin: $margin-5 - 2 0;
+                    }
+
+                    h3 {
+                        font-size: $font-size-1;
+                        font-weight: $font-weight-bold;
+                        margin: 0;
+                    }
+
+                    p {
+                        font-size: $font-size-8;
+                        margin: 0 0 0 $margin-5 - 1;
+                    }
+                }
+
+                .card-button {
+                    padding-bottom: $padding-20;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+// ---------------SUBNAV-MODAL---------
+.submenu-modal {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    display: none;
+
+    .animate__animated.animate__fadeInDown {
+        --animate-duration: 400ms;
+    }
+
+    .submenu-modal-container {
+        border-radius: 5px;
+        position: absolute;
+        top: 49px;
+        left: 41%;
+        background-color: $color-white-100;
+        width: 55%;
+        padding: $padding-14 $padding-25 - 1 $padding-40 - 4;
+        display: flex;
+        flex-direction: column;
+
+        z-index: 0;
+
+        ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            justify-content: space-evenly;
+            margin: 0;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        .submenu-top {
+            padding-bottom: $padding-22;
+            border-bottom: 1px solid $color-gray-100;
+
+            .submenu-top__item {
+                .item__link {
+                    padding: $padding-40 - 4 0 $padding-25 + 3 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    color: $color-dark-blue !important;
+                    font-size: 1.4rem !important;
+
+                    &:hover,
+                    &:hover > svg,
+                    &:hover > svg #Rectangle:first-child {
+                        color: $color-blue-100 !important;
+                        fill: $color-blue-100 !important;
+                    }
+
+                    svg {
+                        width: 50px;
+                        height: 50px;
+                        margin: 0 40px;
+                        fill: $color-dark-blue !important;
+                    }
+
+                    span {
+                        margin-top: $margin-20 + 4;
+                    }
+                }
+            }
+        }
+        .submenu-bottom {
+            padding-top: $padding-30;
+
+            .submenu-bottom-item {
+                margin-right: 30px;
+
+                .item__link {
+                    color: $color-blue-100;
+
+                    i {
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ---------------MINI MENU------------
+
+.mini-menu-modal-container {
+    position: fixed;
+    top: 49px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $color-white-200;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: all 0.3s linear !important;
+
+    &.opened {
+        display: block;
+        transform: scaleY(1);
+    }
+    .mini-menu-modal {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        transition: transform 0.3s linear;
+
+        &.closed {
+            transform: translateX(-100%);
+        }
+    }
+
+    .mini-submenu {
+        transform: translateX(100%);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $color-white-200;
+        transition: transform 0.3s linear;
+
+        &.opened {
+            transform: translateX(0%);
+        }
+
+        h3 {
+            background-color: $color-white-100;
+            text-align: center;
+            position: relative;
+            margin: 0;
+            padding: $padding-15;
+            color: $color-blue-100;
+            font-size: $font-size-1;
+            font-weight: $font-weight-bold;
+            i {
+                top: 50%;
+                position: absolute;
+                left: 20px;
+                transform: translateY(-50%);
+            }
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                &:nth-last-child(2) {
+                    button {
+                        border-bottom: 1px solid #c4c4c4;
+                    }
+                }
+            }
+        }
+    }
+}
+.mini-menu-button {
+    button {
+        width: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        border: none;
+        border-bottom: 1px solid $color-gray-100;
+        background-color: transparent;
+        padding: $padding-14 0;
+        font-size: $font-size-1;
+        font-weight: $font-weight-bold;
+        color: $color-dark-blue;
+
+        &:focus {
+            border: 3px solid $color-blue-200;
+        }
+    }
+
+    &:nth-last-child(2) {
+        button {
+            border-bottom: none;
+        }
+    }
+
+    .search-box {
+        width: 50% !important;
+        margin: 0 auto;
+        padding: $padding-20 0;
+    }
+}

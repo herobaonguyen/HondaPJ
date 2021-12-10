@@ -1,0 +1,122 @@
+.another-banner {
+
+    padding: 0 $padding-60;
+
+    background: linear-gradient(
+        to bottom,
+        $color-dark-blue 0%,
+        $color-dark-blue 60%,
+        $color-white-200 60%,
+        $color-white-200 100%
+    );
+
+    .banner-container-left,
+    .banner-container-right{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 400px;
+        margin: 20px 5px;
+        color: $color-white-100 !important;
+        position: relative;
+    }
+    .banner-container-left {
+        background-image: url(./../img/our-vehicle-intro-1.jpg);
+        
+
+        p{
+            position: absolute;
+            bottom: 110px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.8rem;
+            font-weight: $font-weight-bold;
+        }
+
+        .btn{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.8rem;
+            bottom: 48px;
+        }
+    }
+    .banner-container-right{
+        background-image: url(./../img/our-vehicles-intro-2.jpg);
+
+        p{
+            position: absolute;
+            bottom: 50%;
+            left: 40px;
+            transform: translateY(-50%);
+            font-size: 1.8rem;
+            font-weight: $font-weight-bold;
+            width: 200px;
+            margin-bottom: 0;
+        }
+
+        .btn{
+           
+            padding: $padding-6 - 2 $padding-15;
+            font-size: 1.8rem;
+            border-radius: 40px;
+            font-weight: $font-weight-bold;
+            @include buttonStyle($color-white-100,transparent,$color-white-100);
+            position: absolute;
+            bottom: 36%;
+            left: 40px;
+
+
+            &:hover{
+                @include buttonStyle($color-blue-200,$color-white-100,$color-white-100);
+            }
+        }
+    }
+
+    @include responsive(extra-large){
+        .banner-container-left,
+        .banner-container-right{
+            height:300px;
+            p{
+                font-size:$font-size-1;
+            }
+
+            .btn{
+                font-size: $font-size-1;
+            }
+        }
+    }
+    @include responsive(large){
+        .banner-container-left,
+        .banner-container-right{
+            height:230px;
+            p{
+                font-size:$font-size-8;
+            }
+    
+            .btn{
+                font-size: $font-size-8;
+                padding: $padding-6 - 3 $padding-10 !important;
+            }
+        }
+        .banner-container-left{
+            p{
+                bottom: 70px;
+                text-align: center;
+            }
+            .btn{
+                bottom: 25px;
+                
+            }
+        }
+        .banner-container-right{
+            p{
+                left: 15px;
+            }
+        }
+       
+    }
+    @include responsive(medium){
+        display: none;
+    }
+}

@@ -1,0 +1,38 @@
+.tool-in-web{
+    padding: $padding-100 + 10 $padding-30 $padding-78 $padding-30;
+    background-color: $color-white-200;
+
+    .content-box{
+        padding: $padding-30;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        flex-direction: column;
+        background-color:$color-white-100;
+        box-shadow: 0px 0px 10px rgba(0,0,0,.11);
+        border-radius: 5px;
+        margin: 0 $margin-5;
+        cursor: pointer;
+
+        svg{
+            fill: $color-dark-blue;
+            width: 80px;
+            margin: $margin-30 0;
+        }
+
+        p{
+            font-size: $font-size-5;
+            font-weight: bold;
+            color: $color-dark-blue;
+            margin: $margin-30 0;
+        }
+
+        &:hover > .btn{
+            @include buttonStyle($color-blue-100,$color-white-100,$color-blue-100);
+        }
+
+        .btn{
+            width: 100px;
+        }
+    }
+}

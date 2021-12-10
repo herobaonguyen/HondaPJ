@@ -1,0 +1,16 @@
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    opacity: 1; 
+}
+
+.carousel-indicators {
+
+    & [data-bs-target]{
+        text-indent: 0;
+        box-sizing: inherit;
+        background: none;
+        width:fit-content;
+        height:fit-content;
+    }
+}

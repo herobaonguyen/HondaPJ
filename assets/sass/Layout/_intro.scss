@@ -1,0 +1,89 @@
+.intro-banner {
+    padding: 0 $padding-78;
+    background-color: $color-white-200;
+    padding-bottom: 30px;
+
+    .intro-content{
+        height:400px;
+        background-size: cover;
+        background-position:center center;
+        background-clip: content-box;
+        padding: 0 $padding-20;
+        position: relative;
+        color:$color-white-100;
+
+        h3{
+            font-size: $font-size-5;
+            font-weight: $font-weight-bold;
+            position: absolute;
+            bottom: 36%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        p{
+            font-size: $font-size-4;
+            width: 90%;
+            text-align: center;
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            margin-bottom: 0;
+        }
+
+        .btn{
+            position: absolute;
+            bottom: 7%;
+            left: 50%;
+            transform: translate(-50%,-50%);       
+        }
+
+        &:first-child{
+            background-image: url(./../img/intro-3.jpg);
+        }
+        &:last-child{
+            background-image: url(./../img/intro-4.jpg);
+            
+            
+            
+        }
+    }
+
+    @include responsive(extra-large) {
+        .intro-content{
+            h3{
+                bottom:43%;
+                width: 80%;
+                text-align: center;
+            }
+        }
+    }
+    @include responsive(large) {
+        .intro-content{
+           p{
+               font-size: $font-size-1;
+           }
+           h3{
+               font-size: $font-size-4;
+           }
+
+           .btn{
+               font-size: $font-size-1;
+           }
+        }
+    }
+    @include responsive(medium) {
+        .intro-content{
+            margin: $margin-5 0;
+            p{
+                font-size: $font-size-4;
+            }
+            h3{
+                font-size: $font-size-5;
+            }
+            .btn{
+                font-size: $font-size-4;
+            }
+        }
+    }
+}

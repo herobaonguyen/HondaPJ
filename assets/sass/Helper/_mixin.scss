@@ -1,0 +1,17 @@
+@mixin buttonStyle ($color,$backgroundColor,$borderColor) { 
+    color: $color; 
+    background-color: $backgroundColor;
+    border: 2px solid $borderColor;
+}
+
+@mixin  responsive($screen) {
+    @if map-has-key($map: $breakpoints , $key: $screen ){
+        $value: map-get($map: $breakpoints, $key: $screen );
+        @media screen and (max-width:$value) {
+            @content;
+        }
+    }
+    @else {
+        @warn "error";
+    }
+}

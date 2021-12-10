@@ -1,0 +1,294 @@
+.Our-vehicles-banner {
+    position: relative;
+    background-color: $color-white-200;
+    .Our-vehicles-banner__header {
+        text-align: center;
+        font-size: 7rem;
+        font-weight: $font-weight-300;
+        color: $color-blue-400;
+        padding: $padding-30 + 5 $padding-20 $padding-25;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        i {
+            font-size: $font-size-6;
+            color: $color-blue-400;
+            padding: $padding-20 $padding-15;
+            background-color: $color-white-200;
+        }
+    }
+    .carousel-control-prev {
+        justify-content: flex-start;
+        i {
+            border-radius: 0 6px 6px 0;
+        }
+    }
+    .carousel-control-next {
+        justify-content: flex-end;
+        i {
+            border-radius: 6px 0px 0px 6px;
+        }
+    }
+
+    .carousel-indicators {
+        justify-content: center;
+        margin-bottom: $margin-30;
+        position: relative;
+
+        button {
+            position: relative;
+            border: 0;
+            background-color: transparent;
+            font-size: $font-size-4;
+            font-weight: $font-weight-bold;
+            margin: 0 $margin-30;
+            color: $color-dark-blue;
+            display: flex;
+            justify-content: center;
+
+            &.active {
+                color: $color-blue-100;
+
+                &::after {
+                    content: "";
+                    width: 95%;
+                    height: 5px;
+                    background-color: $color-blue-100;
+                    position: absolute;
+                    bottom: -5px;
+                }
+            }
+        }
+    }
+    .carousel-item {
+        .top-banner {
+            font-size: $font-size-4;
+            font-weight: $font-weight-bold;
+            color: $color-white-100;
+            position: absolute;
+            top: 26px;
+            left: -51px;
+            background-color: $color-green;
+            transform: rotate(-45deg);
+            padding: $padding-10 $padding-50;
+            z-index: 3;
+
+            &::after {
+                content: "";
+                width: 50px;
+                height: 60px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1000;
+            }
+        }
+
+        .banner-container {
+            position: absolute;
+            top: 50%;
+            left: 17%;
+            color: $color-white-100;
+            transform: translate(-50%, -50%);
+            width: 21%;
+
+            .car-counter {
+                position: absolute;
+                font-size: $font-size-4;
+                top: -18%;
+                left: 0;
+
+                span:first-child {
+                    font-weight: $font-weight-bold;
+                }
+            }
+
+            .banner-car-name {
+                position: relative;
+                svg {
+                    fill: $color-white-100;
+                }
+                &:before {
+                    content: "";
+                    width: 40%;
+                    height: 2px;
+                    background-color: $color-white-100;
+                    position: absolute;
+                    top: 11px;
+                    left: 0;
+                }
+                &:after {
+                    content: "";
+                    width: 40%;
+                    height: 2px;
+                    background-color: $color-white-100;
+                    position: absolute;
+                    top: 11px;
+                    right: 0;
+                }
+            }
+
+            .banner-car-text {
+                font-size: $font-size-4;
+                margin: $margin-20 0;
+                text-align: justify;
+            }
+            .banner-car-info {
+                margin-bottom: $margin-15;
+                margin-right: -30px;
+
+                .info-content {
+                    h2 {
+                        font-size: $font-size-7;
+                        font-weight: $font-weight-300;
+                        letter-spacing: 2px;
+                    }
+
+                    p {
+                        font-weight: $font-weight-bold;
+                        font-size: $font-size-1;
+                        margin: $margin-11 0;
+                    }
+                }
+            }
+            .banner-button {
+                .btn {
+                    font-size: $font-size-4 + 0.1;
+                    min-width: 120px;
+
+                    &:last-child {
+                        margin-left: $margin-11;
+                    }
+                }
+            }
+        }
+
+        .banner-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            color: $color-white-100;
+            font-size: $font-size-4;
+            font-weight: $font-weight-bold;
+            width: 50%;
+            border-top: 2px solid hsla(0, 0%, 100%, 0.2);
+            padding: $padding-20 $padding-100 + 10;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    @include responsive(extra-large) {
+        .Our-vehicles-banner__header {
+            font-size: 5rem;
+        }
+
+        .carousel-indicators {
+            margin-right: 0%;
+            margin-left: 0%;
+        }
+
+        .carousel-item {
+            .top-banner {
+                display: none;
+            }
+            .banner-container {
+                width: 28%;
+                left: 22%;
+
+                .car-counter {
+                    top: 0px;
+                    left: -81px;
+                }
+                .banner-car-text {
+                    font-size: $font-size-1;
+                }
+                .banner-car-info {
+                    .info-content {
+                        h2 {
+                            font-size: 3rem;
+                        }
+
+                        p {
+                            font-size: $font-size-8;
+                        }
+                    }
+                }
+            }
+            .banner-footer {
+                display: none;
+            }
+        }
+    }
+
+    @include responsive(large) {
+        .carousel-item {
+            .top-banner {
+                display: none;
+            }
+            .banner-container {
+                width: 30%;
+                left: 22%;
+
+                .banner-car-name {
+                    margin: $margin-11 0;
+                }
+                .car-counter {
+                    top: -30px;
+                    left: 0px;
+                }
+                .banner-car-text {
+                    font-size: $font-size-8;
+                    display: none;
+                }
+                .banner-button {
+                    margin-right: -30%;
+                    font-size: $font-size-8;
+                }
+            }
+        }
+    }
+    @include responsive(medium) {
+        .carousel-indicators {
+            button {
+                font-size: $font-size-8 !important;
+                margin: 0 $margin-11;
+            }
+        }
+    }
+    @include responsive(small) {
+        .carousel-indicators {
+            margin-bottom: $margin-11;
+            flex-wrap: wrap;
+            button{
+                margin-bottom: $margin-11;
+            }
+        }
+        .banner-car-info{
+            display:none !important;
+        }
+        .banner-button{
+            .btn{
+                font-size: 1rem !important;
+                &:last-child{
+                    margin-left: 0px !important;
+                }
+            }
+         
+        }
+        .carousel-control-prev,
+        .carousel-control-next{
+            height: 130%;
+            
+            i{
+                padding: $padding-10 $padding-10;
+                font-size: $font-size-1;
+               
+            }
+        }
+    }
+}

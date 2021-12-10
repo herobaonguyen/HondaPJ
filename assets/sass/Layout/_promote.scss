@@ -1,0 +1,116 @@
+.promote-banner {
+    color: $color-dark-blue;
+
+    display: flex;
+    justify-content: center;
+    padding: $padding-20;
+    align-items: center;
+
+    .promote-text{
+        padding: $padding-20;
+        h2{
+            font-size:5rem;
+            font-weight: 400;
+            margin-bottom:$margin-5;
+        }
+
+        p{
+            font-size:1.6rem;
+            text-align:center;
+            margin-bottom: 0;
+        }
+    }
+
+    .promote-car{
+        display: flex;
+        align-items: center;
+
+        .car-img {
+            position: relative;
+            height:160px;
+            width: 300px;
+
+            
+
+            img{
+                position: absolute;
+                width: 420px;
+                top: -54px;
+                right: -46px;
+
+                &.animate__animated.animate__fadeIn{
+                    --animate-delay: 0.3s;
+                }
+            }
+        }
+
+        .car-info{
+            &.animate__animated.animate__fadeInUp{
+                --animate-delay: 0.3s;
+            }
+
+            p{
+                font-size: 1.7rem;
+                &:first-child{
+                    font-weight:900;
+                    font-style: italic;
+                }
+            }
+
+            .btn{
+                &:first-child{
+                    margin-right: $margin-20;
+                }
+            }
+        }
+    }
+
+    @include responsive(large){
+        .promote-text{
+            padding: 0;
+            width: 35%;
+           
+            p{
+                text-align: left;
+            }
+        }
+        .promote-car{
+            width: 65%;
+            justify-content: center; 
+            img{
+             
+               width:350px;
+            }
+        }
+    }
+    @include responsive(medium){
+        flex-direction: column;
+        .promote-text{
+            text-align: center;
+            width: 100%;
+            h2{
+                font-size:4rem ;
+            }
+            p{
+                text-align:center;
+            }
+        }
+        .promote-car{
+            width: 100%;
+            justify-content: center;
+            
+        }
+    }
+    @include responsive(small){
+        padding: 0;
+        .promote-car{
+     
+            img{
+                width:350px !important;
+            }
+        }
+      
+    }
+
+    
+}

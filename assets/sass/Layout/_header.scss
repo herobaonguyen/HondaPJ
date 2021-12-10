@@ -1,0 +1,129 @@
+#header {
+    background-color: $color-blue-100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    width: inherit;
+
+    a {
+        text-decoration: none;
+        font-size: 1.4rem;
+        transition: all 0.1s ease;
+        font-weight: $font-weight-bold;
+    }
+
+    .myNavbar {
+        padding: 0;
+        width: inherit;
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            width: inherit;
+            align-items: center;
+        }
+    }
+}
+
+.header-left {
+    .navbar-brand {
+        margin-right: 0;
+        padding: 0 $padding-25 !important;
+    }
+}
+
+.header-right {
+    .modal-btn {
+        border-right: $border-1;
+        border-left: $border-1;
+        padding: $padding-14 $padding-30;
+        color: $color-white-100;
+        cursor: pointer;
+
+        i {
+            transition: all 0.2s ease;
+        }
+    }
+    #navbar-menu {
+        display: flex;
+        .navbar-nav {
+            flex-direction: row;
+            .nav-item {
+                .nav-link {
+                    padding: $padding-14 $padding-15 + 1;
+                    color: $color-white-100;
+                }
+                &:last-child {
+                    .nav-link {
+                        padding-right: 34px;
+                    }
+                }
+            }
+        }
+    }
+    .header-right__responsive {
+        display: none;
+
+        margin-right: $margin-30;
+
+        a {
+            color: white;
+            font-size: $font-size-2 - 0.2 !important;
+            margin-right: $margin-53;
+        }
+
+        .menu-button {
+            position: relative;
+            cursor: pointer;
+
+            .line {
+                width: 30px;
+                height: 3.5px;
+                background-color: $color-white-100;
+                position: absolute;
+                border-radius: 30px;
+                transition: all 0.2s ease;
+                &:first-child {
+                    top: 8px;
+                    right: 0px;
+                    transform-origin: 29px 1px;
+
+                    &.click-active {
+                        transform: rotate(-45deg);
+                    }
+                }
+                &:nth-child(2) {
+                    top: 16px;
+                    right: 0px;
+                    transform-origin: 15px 8px;
+                  
+
+                    &.click-active {
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+
+            .line-text {
+                background-color: transparent;
+                color: $color-white-100;
+                font-weight: $font-weight-bold;
+                position: absolute;
+                top: 20px;
+                right: 0;
+                --animate-duration: 500ms;
+            }
+        }
+    }
+
+    @include responsive(large) {
+        #navbar-menu {
+            display: none;
+        }
+        .header-right__responsive {
+            display: flex;
+        }
+    }
+}
